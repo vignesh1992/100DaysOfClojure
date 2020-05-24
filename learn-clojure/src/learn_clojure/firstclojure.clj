@@ -1,4 +1,4 @@
-(ns gitpod.s05-practice
+(ns learn-clojure.firstclojure
   (:use clojure.repl))
 
 
