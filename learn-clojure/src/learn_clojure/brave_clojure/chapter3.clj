@@ -1,4 +1,4 @@
-(ns learn-clojure.brave-clojure.chapter3
+(ns learn_clojure.brave_clojure.chapter3
   (:use clojure.repl))
 
 (println "Chapter 3 of Brave Clojure")
@@ -43,3 +43,32 @@ failed-protagonist-names
                            "second") "episode" ))
 
 (printByCondition "second")
+
+;; def is similar to assignment
+(def name "Chewbacca")
+
+(str "\"Uggllglglglglglglglll\" - " name)
+
+;; not string interpolation is allowed like replacing, only concat
+
+(println name)
+
+{:first-name "Charlie"
+ :last-name "McFishwich"}
+
+(def map_val {:name "vignesh"
+              :age "27"})
+
+(get map_val :age1)
+
+;; if map has no values, return default
+
+(get map_val :age1 "default")
+
+(map_val :age) ;; can be fetched without the get
+
+
+;; NEXT is Keywords ;;
+
+
+
