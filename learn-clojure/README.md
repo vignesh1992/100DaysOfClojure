@@ -2,4 +2,6 @@
 
 This project will have code from my 100 Days of Clojure learning challenge
 
-brave_clojure can be found out at https://www.braveclojure.com/clojure-for-the-brave-and-true/
+Following brave_clojure ebook which can be found out at https://www.braveclojure.com/clojure-for-the-brave-and-true/
+
+The target end date of #100DaysOfClojure is 1st of september 2020
