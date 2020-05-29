@@ -121,3 +121,80 @@ failed-protagonist-names
 (get #{:a :b} :a)
 
 ;; NEXT is Functions
+
+(+ 1 2 3 4)
+
+(* 1 2 3 4)
+
+(first '(1 2 3))
+
+(inc 1.1)
+
+(map inc [0 1 2 3])
+
+(defn too-enthusiastic
+    "Return a cheer that might be a bit too enthusiastic"
+    [name]
+    (str "OH. MY. GOD! " name " YOU ARE MOST DEFINITELY LIKE THE BEST "
+             "MAN SLASH WOMAN EVER I LOVE YOU AND WE SHOULD RUN AWAY SOMEWHERE"))
+
+(too-enthusiastic "Zelda")
+
+
+(defn no-params
+  []
+  "I take no parameters!")
+(defn one-param
+  [x]
+  (str "I take one parameter: " x))
+(defn two-params
+  [x y]
+  (str "Two parameters! That's nothing! Pah! I will smoosh them "
+       "together to spite you! " x y))
+
+(no-params)
+
+(one-param "one param")
+
+(two-params "one" "two")
+
+(defn multi-arity
+  ;; 2-arity arguments and body
+  ([first-arg second-arg]
+   (two-params first-arg second-arg))
+  ;; 1-arity arguments and body
+  ([first-arg]
+   (one-param first-arg)))
+
+(multi-arity "vignesh")
+
+(defn weird-arity
+  ([]
+   "Destiny dressed you this morning, my friend, and now Fear is
+     trying to pull off your pants. If you give up, if you give in,
+     you're gonna end up naked with Fear just standing there laughing
+     at your dangling unmentionables! - the Tick")
+  ([number]
+   (inc number)))
+
+(weird-arity 5)
+
+(defn codger-communication
+  [whippersnapper]
+  (str "Get off my lawn, " whippersnapper "!!!"))
+
+(defn codger
+    [& whippersnappers]
+  (map codger-communication whippersnappers))
+
+(codger "Billy" "Anne-Marie" "The Incredible Bulk")
+
+
+(defn simulate-loop
+  [& list_values]
+  (str "value " list_values)
+  )
+
+(simulate-loop 1 2 3)
+
+;; next is Destructuring
