@@ -198,3 +198,53 @@ failed-protagonist-names
 (simulate-loop 1 2 3)
 
 ;; next is Destructuring
+;; The basic idea behind destructuring is that it lets you concisely bind names to values within a collection.
+
+(defn my-first
+  [[first-thing, second-thing]] ; Notice that first-thing is within a vector
+  (str first-thing second-thing))
+
+(my-first ["vignesh","sharan"])
+
+
+(defn announce-treasure-location
+  [{:keys [lat lng]}]
+  (println (str "Treasure lat: " lat))
+  (println (str "Treasure lng: " lng)))
+
+(announce-treasure-location {:lat 28.22 :lng 81.33})
+
+(defn illustrative-function
+  []
+  (+ 1 304)
+  30
+  "joe")
+
+(illustrative-function) ;; Executes the last form
+
+
+(map (fn [name] (str "Hi, " name))
+     ["Darth Vader" "Mr. Magoo"])
+
+((fn [x] (* x 3)) 8)
+
+;; Function call
+(* 8 3)
+
+;; Anonymous function
+#(* % 3)
+
+(#(str %1 " and " %2) "cornbread" "butter beans")
+
+(#(identity %&) 1 "blarg" :yip "Vignesh")
+
+(defn inc-maker
+  "Create a custom incrementor"
+  [inc-by]
+  #(+ % inc-by))
+
+(def inc3 (inc-maker 3))
+
+(inc3 7)
+
+;; Next is The Shire’s Next Top Model
