@@ -286,32 +286,22 @@ failed-protagonist-names
                (into final-body-parts
                      (set [part (matching-part part)])))))))
 
-;; matching-part..
-(defn matching-part
-  [part]
-  {:name (clojure.string/replace (:name part) #"^left-" "right-")
-   :size (:size part)})
 
-(defn symmetrize-body-parts
-  "Expects a seq of maps that have a :name and :size"
-  [asym-body-parts]
-  (loop [remaining-asym-parts asym-body-parts
-         final-body-parts []]
-    (if (empty? remaining-asym-parts)
-      final-body-parts
-      (let [[part & remaining] remaining-asym-parts]
-        (recur remaining
-               (into final-body-parts
-                     (set [part (matching-part part)])))))))
+;; let - binds names to values
 
-(defn symmetrize-body-parts
-  "Expects a seq of maps that have a :name and :size"
-  [asym-body-parts]
-  (loop [remaining-asym-parts asym-body-parts
-         final-body-parts []]
-    (if (empty? remaining-asym-parts)
-      final-body-parts
-      (let [[part & remaining] remaining-asym-parts]
-        (recur remaining
-               (into final-body-parts
-                     (set [part (matching-part part)])))))))
+
+(let [x 3] x)
+
+(def dalmatian-list
+  ["Pongo" "Perdita" "Puppy 1" "Puppy 2"])
+
+(let [dalmatians (take 2 dalmatian-list)]
+  dalmatians)
+
+(def x 5)
+(let [x 6] x)
+
+(let [[pongo & dalmatians] dalmatian-list]
+  [pongo dalmatians])
+
+;; Next is detailed look at - let
