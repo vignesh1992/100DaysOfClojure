@@ -7,3 +7,5 @@ Following brave_clojure ebook which can be found out at https://www.braveclojure
 The target end date of #100DaysOfClojure is 1st of september 2020
 
 # Cover most of the core concepts to develop an app using clojure
+
+# Update the README file
