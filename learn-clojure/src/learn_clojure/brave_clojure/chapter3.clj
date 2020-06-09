@@ -304,4 +304,41 @@ failed-protagonist-names
 (let [[pongo & dalmatians] dalmatian-list]
   [pongo dalmatians])
 
-;; Next is detailed look at - let
+;; Next is detailed look at - loop
+
+
+(loop [iteration 0]
+  (println (str "Iteration " iteration))
+  (if (> iteration 3)
+    (println "Goodbye!")
+    (recur (inc iteration))))
+
+
+(defn recursive-printer
+  ([]
+   (recursive-printer 0))
+  ([iteration]
+   (println iteration)
+   (if (> iteration 3)
+     (println "Goodbye!")
+     (recursive-printer (inc iteration)))))
+
+
+(recursive-printer)
+
+(re-find #"^left-" "left-eye")
+; => "left-"
+
+(re-find #"^left-" "cleft-chin")
+; => nil
+
+(re-find #"^left-" "wongleblart")
+
+(defn matching-part
+  [part]
+  {:name (clojure.string/replace (:name part) #"^left-" "right-")
+   :size (:size part)})
+
+(matching-part {:name "left-eye" :size 1})
+
+;; Next is - Symmetrizer
