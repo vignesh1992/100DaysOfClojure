@@ -8,4 +8,4 @@ The target end date of #100DaysOfClojure is 1st of september 2020
 
 # Cover most of the core concepts to develop an app using clojure
 
-# Update the README file - update readme file - update today
+# Update the README file - update readme file - update today - update
